@@ -1,0 +1,290 @@
+.message--close {
+    position: fixed;
+    z-index: 10;
+    color: #e74c3c;
+    line-height: 24px;
+    height: 24px;
+    font-size: 20px;
+    cursor: pointer;
+    bottom: -100px;
+    right: -100px;
+    transition: all .3s ease;
+    opacity: 0;
+    &.opened {
+        right: 150px;
+        bottom: 720px;
+        opacity: 1;
+    }
+    svg:first-child {
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        left: -25px;
+    }
+    svg:last-child {
+        position: absolute;
+        height: 24px;
+        width: 24px;
+        right: -25px;
+    }
+}
+.messages {
+    height: 50px;
+    width: 50px;
+    background: $PrimaryColor;
+    opacity: 1;
+    background-image:  linear-gradient(30deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(150deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(30deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(150deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(60deg, #49d28277 25%, transparent 25.5%, transparent 75%, #49d28277 75%, #49d28277), linear-gradient(60deg, #49d28277 25%, transparent 25.5%, transparent 75%, #49d28277 75%, #49d28277);
+    background-size: 20px 35px;
+    background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 30px 30px 10px 30px;
+    transition: all .3s ease;
+    color: #fff;
+    overflow: hidden;
+    border: 3px #fff solid;
+    .notifications--all {
+        background: #e74c3c;
+        color: #fff;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        height: 30px;
+        width: 30px;
+        border-radius: 50%;
+        border: 2px #fff solid;
+        font-size: 14px;
+        line-height: 30px;
+        text-align: center;
+        transition: all .3s ease;
+    }
+    svg {
+        height: 32px;
+        width: 32px;
+        padding: 9px;
+        transition: all .3s ease;
+    }
+    &:not(.opened) {
+        cursor: pointer;
+        &:hover {
+            height: 60px;
+            width: 60px;
+            .notifications--all {
+                top: 13px;
+                left: 13px;
+            }
+            svg {
+                padding: 14px;
+            }
+        }
+    }
+    &.opened {
+        height: 700px;
+        width: 350px;
+        border-radius: 30px 30px 10px 10px;
+        .menu {
+            overflow-x: auto;
+            overflow-y: hidden;
+            background-color: #fff;
+            .connected {
+                position: absolute;
+                bottom: -5px;
+                right: 0;
+                transform: translateX(-50%) translateY(-50%);
+                width: 20px;
+                height: 20px;
+                z-index: 3;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: block;
+                    width: calc(100% - 4px);
+                    height: calc(100% - 4px);
+                    background-color: #2ecc71;
+                    border-radius: 25px;
+                    border: 2px #fff solid;
+                    animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+                }
+            }
+    
+            .not-connected {
+                position: absolute;
+                bottom: -5px;
+                right: 0;
+                transform: translateX(-50%) translateY(-50%);
+                width: 20px;
+                height: 20px;
+                z-index: 3;
+                
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    display: block;
+                    width: calc(100% - 6px);
+                    height: calc(100% - 6px);
+                    background-color: #414141;
+                    border-radius: 25px;
+                    border: 2px #fff solid;
+                    // animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -.4s infinite;
+                }
+            }
+            .selected {
+                border-radius: 10px 10px 0 0;
+                background-color: $PrimaryColor;
+                background-image:  linear-gradient(30deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(150deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(30deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(150deg, #49d282 12%, transparent 12.5%, transparent 87%, #49d282 87.5%, #49d282), linear-gradient(60deg, #49d28277 25%, transparent 25.5%, transparent 75%, #49d28277 75%, #49d28277), linear-gradient(60deg, #49d28277 25%, transparent 25.5%, transparent 75%, #49d28277 75%, #49d28277);
+                background-size: 20px 35px;
+                background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
+            }
+            &>div {
+                position: relative;
+                min-width: 80px;
+                text-align: center;
+                padding-top: 5px;
+                transition: all .3s ease;
+                border-bottom: 3px #fff solid;
+                &:last-child {
+                    margin-left: auto;
+                }
+                img {
+                    margin-top: 3px;
+                    height: 44px;
+                    width: 44px;
+                    border-radius: 50%;
+                }
+                .notifications {
+                    background: #e74c3c;
+                    color: #fff;
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    height: 26px;
+                    width: 26px;
+                    border-radius: 50%;
+                    border: 2px #fff solid;
+                    font-size: 14px;
+                    line-height: 26px;
+                }
+            }
+            &>div:not(.selected) {
+                color: $PrimaryColor;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    .menu {
+        display: flex;
+    }
+    .list__messages {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        height: 566px;
+        overflow-x: auto;
+        padding: 10px 0 20px;
+        scroll-behavior: smooth;
+        .message {
+            position: relative;
+            background: #fff;
+            color: $PrimaryColor;
+            width: max-content;
+            max-width: 70%;
+            padding: 10px;
+            margin-left: 50px;
+            margin-bottom: 20px;
+            border-radius: 15px 15px 15px 2px;
+            &:first-child {
+                margin-top: auto;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:hover {
+                .date {
+                    opacity: 1;
+                }
+            }
+            .text {
+                font-size: 18px;
+            }
+            .pp {
+                position: absolute;
+                bottom: 0;
+                height: 40px;
+                width: 40px;
+                border-radius: 50%;
+                overflow: hidden;
+                &>img {
+                    height: 100%;
+                    width: 100%;
+                }
+            }
+            .date {
+                position: absolute;
+                color: #fff;
+                white-space: nowrap;
+                width: max-content;
+                bottom: -18px;
+                opacity: 0;
+                transition: all .3s ease;
+                font-size: 14px;
+            }
+            &:not(.me) {
+                .pp {
+                    left: -45px;
+                }
+                .date {
+                    left: -25px;
+                }
+            }
+            &.me {
+                margin-left: auto;
+                margin-right: 50px;
+                border-radius: 15px 15px 2px 15px;
+                .pp {
+                    right: -45px;
+                }
+                .date {
+                    right: -25px;
+                }
+            }
+        }
+    }
+    .send {
+        position: absolute;
+        display: flex;
+        bottom: 0;
+        width: 100%;
+        &>input {
+            width: calc(100% - 66px);
+            border: 3px $PrimaryColor solid;
+            max-height: 45px;
+            border-radius: 10px;
+            outline: none;     
+            font-size: 16px;
+            font-weight: 500;  
+            padding: 0 10px; 
+        }
+        &>button {
+            height: 45px;
+            width: 45px;
+            background-color: #00000000;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            &>svg {
+                padding: 2px 5px 5px;
+                height: 25px;
+                width: 25px;
+                transform: rotate(45deg);
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@import '/components/colors';
+@import '/components/fonts';
+@import '/components/nav';
+@import '/components/leftNav';
+@import '/components/messages';
+@import '/components/body';
+@import '/modals/modals';
+@import '/modals/invite';
+@import '/views/home';
+
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    background: $Grey;
+    font-family: 'Roboto';
+}
+
+.container {
+    display: flex;
+}
+
+.radio--class {
+    cursor: pointer;
+    input {
+        position: absolute;
+        left: -9999px;
+        &:checked + span {
+            background-color: mix(#fff, $PrimaryColor, 84%);
+            &:before {
+                box-shadow: inset 0 0 0 .8em $PrimaryColor;
+            }
+        }
+    }
+    span {
+        display: flex;
+        align-items: center;
+        padding: 0.1em 0.75em 0.1em 0.375em;
+        border-radius: 99em; // or something higher...
+        transition: 0.25s ease;
+        &:hover {
+            background-color: mix(#fff, $PrimaryColor, 84%);
+        }
+        &:before {
+            display: flex;
+            flex-shrink: 0;
+            content: "";
+            background-color: #fff;
+            width: 1em;
+            height: 1em;
+            border-radius: 50%;
+            margin-right: 0.375em;
+            transition: 0.25s ease;
+            box-shadow: inset 0 0 0 0.125em $PrimaryColor;
+        }
+    }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter,
+.fade-leave-to {
+    opacity: 0;
+}
+
+.fadeTop-enter-active,
+.fadeTop-leave-active {
+    transition: all .5s;
+}
+
+.fadeTop-enter,
+.fadeTop-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.zoom-enter-active,
+.zoom-leave-active {
+    transition: all .5s;
+}
+
+.zoom-enter,
+.zoom-leave-to {
+    opacity: 0;
+    transform: scale(1.1);
+}
+
+.no-scroll::-webkit-scrollbar {
+    height: 0;
+}
+.scrollbar-perso::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    padding: 2px;
+    background-color: #00000000;
+}
+.scrollbar-perso::-webkit-scrollbar-thumb {
+    background: #ffffffa0;
+    border-radius: 5px;
+}

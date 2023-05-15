@@ -1,0 +1,87 @@
+.modal__invite {
+    position: absolute;
+    left: calc(100% + 20px);
+    cursor: default;
+    width: 300px;
+    .block {
+        background: white;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    .line {
+        display: flex;
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+        .link {
+            color: $BorderColor;
+            white-space: nowrap;
+            line-height: 24px;
+        }
+        .valid {
+            width: 100%;
+            color: #fff;
+            background: $PrimaryColor;
+            border-radius: 5px;
+            height: 28px;
+            line-height: 28px;
+            white-space: nowrap;
+            margin-left: auto;
+            margin-right: 0;
+            text-align: center;
+            transition: all .2s ease;
+            transform: scale(1);
+            cursor: pointer;
+            &:hover {
+                letter-spacing: 1px;
+            }
+        }
+        .copy {
+            color: #fff;
+            background: $PrimaryColor;
+            border-radius: 5px;
+            height: 24px;
+            line-height: 24px;
+            white-space: nowrap;
+            width: 120px;
+            margin-left: auto;
+            margin-right: 0;
+            text-align: center;
+            transition: all .2s ease;
+            transform: scale(1);
+            cursor: pointer;
+            &.anim {
+                transform: scale(0.8);
+                transition: all .05s ease;
+            }
+            &:hover {
+                letter-spacing: 1px;
+            }
+        }
+        .bloc--copy {
+            color: #444;
+            background: #ddd;
+            padding: 5px;
+            width: 300px;
+            border-radius: 5px;
+            text-align: center;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                height: 0;
+            }
+        }
+        .users {
+            color: $BorderColor;
+        }
+        .mail__input {
+            background-color: #fff;
+            border: 2px $PrimaryColor solid;
+            border-radius: 5px;
+            height: 25px;
+            font-size: 16px;
+            width: 100%;
+            padding: 5px 10px;
+        }
+    }
+}

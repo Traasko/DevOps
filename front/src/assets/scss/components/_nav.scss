@@ -1,0 +1,198 @@
+.nav {
+    position: relative;
+    display: flex;
+    background: $DarkGrey;
+    height: 68px;
+    font-family: 'Roboto';
+    border-bottom: 2px solid $LightGrey;
+    .logo {
+        .logo__block {
+            position: absolute;
+            top: 52%;
+            left: 20px;
+            margin-left: 15px;
+            height: 25px;
+            width: 25px;
+            transform: translate(-50%, -50%) rotate(45deg) translate3d(0, 0, 0);
+        }
+        
+        span {
+            position: absolute;
+            display: block;
+            width: 10px;
+            height: 10px;
+            transform: rotate(-90deg);
+        }
+        
+        span:nth-child(1) {
+            top: 0;
+            left: 0;
+            background: $PrimaryColor;
+        }
+        
+        span:nth-child(2) {
+            top: 0;
+            right: 0;
+            background: $PrimaryColor;
+        }
+        
+        span:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            background: $PrimaryColor;
+        }
+        
+        span:nth-child(4) {
+            bottom: 0;
+            right: 0;
+            background: $PrimaryColor;
+        }
+        
+    }
+    .title {
+        color: $BorderColor;
+        line-height: 70px;
+        font-size: 20px;
+        margin-left: 70px;
+    }
+    .nav__actions {
+        position: fixed;
+        display: flex;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: max-content;
+        padding-top: 12px;
+        height: 28px;
+        .button--save {
+            border-radius: 5px;
+            background: $PrimaryColor;
+            color: #fff;
+            text-align: center;
+            width: max-content;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .button--play {
+            position: relative;
+            border-radius: 5px;
+            background: $PrimaryColor;
+            color: #fff;
+            text-align: center;
+            width: max-content;
+            padding: 5px 10px 5px 30px;
+            cursor: pointer;
+            margin: 0 5px;
+            svg {
+                position: absolute;
+                left: 5px;
+                height: 19px;
+            }
+        }
+        .button--link {
+            position: relative;
+            border-radius: 5px;
+            background: $PrimaryColor;
+            color: #fff;
+            text-align: center;
+            width: max-content;
+            padding: 5px 10px 5px 30px;
+            cursor: pointer;
+            svg {
+                position: absolute;
+                left: 5px;
+                height: 19px;
+            }
+        }
+        .text--save {
+            position: fixed;
+            top: 44px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: max-content;
+            color: $BorderColor;
+            font-size: 14px;
+        }
+    }
+    .button--signup {
+        border: 1px solid #fff;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+        line-height: 30px;
+        height: 30px;
+        width: 130px;
+        margin: auto 10px auto auto;
+        cursor: pointer;
+    }
+    .button--connexion {
+        text-align: center;
+        border-radius: 5px;
+        line-height: 32px;
+        height: 32px;
+        width: 132px;
+        background: $PrimaryColor;
+        color: #fff;
+        margin: auto 20px auto 10px;
+        cursor: pointer;
+    }
+    .button--projects {
+        text-align: center;
+        border-radius: 5px;
+        line-height: 32px;
+        height: 32px;
+        width: 132px;
+        background: $PrimaryColor;
+        color: #fff;
+        margin: auto 10px auto auto;
+        cursor: pointer;
+    }
+    .button--add {
+        text-align: center;
+        border-radius: 5px;
+        line-height: 32px;
+        height: 32px;
+        width: 32px;
+        background: $BorderColor;
+        color: #fff;
+        margin: auto 10px auto 0;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .user--connected {
+        position: relative;
+        margin: auto 10px auto 20px;
+        padding-bottom: 12px;
+        color: #fff;
+        .disconnect {
+            color: $PrimaryColor;
+            position: absolute;
+            top: 18px;
+            right: 0;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    }
+    .user--picture {
+        height: 68px;
+        display: flex;
+        margin-right: 10px;
+        img {
+            height: 45px;
+            border-radius: 50%;
+            margin: auto;
+        }
+    }
+    .text--nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        line-height: 68px;
+        color: #ffffff40;
+        font-size: 26px;
+        width: max-content;
+    }
+}

@@ -1,0 +1,137 @@
+.all {
+    position: relative;
+    width: 100%;
+    height: calc(100vh - 70px);
+    transition: all .3s ease;
+    flex: 1;
+
+    &.all__width {
+        transform: translateX(-80px);
+    }
+
+    .top {
+        top: 0;
+    }
+
+    .bottom {
+        bottom: 0;
+    }
+
+    .left {
+        left: 0;
+    }
+
+    .right {
+        right: 0;
+    }
+
+    .box {
+        position: absolute;
+        box-sizing: border-box;
+        width: 100%;
+        height: 50%;
+        color: white;
+        background: $Grey;
+        font-size: 2em;
+        font-family: monospace;
+        min-width: 80px;
+        //max-width: calc(100% - 80px);
+        min-height: 29px;
+        z-index: 0;
+
+        &:nth-child(1) {
+            .ace_editor {
+                height: calc(100% - 30px) !important;
+            }
+        }
+
+        &:nth-child(2) {
+            .ace_editor {
+                height: calc(100% - 60px) !important;
+            }
+        }
+
+        &:nth-child(3) {
+            .ace_editor {
+                height: 100% !important;
+            }
+        }
+
+        .ace_scrollbar {
+            display: none;
+        }
+
+        .ace_editor {
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+
+            .ace_scroller {
+                height: 100% !important;
+
+                &::-webkit-scrollbar {
+                    width: 0;
+                }
+
+                .ace_content {
+                    height: 100% !important;
+
+                    &::-webkit-scrollbar {
+                        width: 0;
+                    }
+                }
+            }
+        }
+
+        &:first-child {
+            height: 100%;
+        }
+
+        .header {
+            width: 100%;
+            height: 30px;
+            font-size: 22px;
+            background-color: $DarkGrey;
+            text-align: center;
+        }
+
+        .resizer {
+            position: absolute;
+            background-color: $DarkGrey;
+            z-index: 1000;
+
+            &.vertical {
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 5px;
+                cursor: e-resize;
+            }
+
+            &.horizontal {
+                right: 0;
+                bottom: 0;
+                height: 30px;
+                width: 100%;
+                cursor: n-resize;
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+    }
+
+    .ace_editor {
+        background: none;
+        font-size: 18px;
+        font-family: 'Roboto Mono';
+
+        .ace_gutter {
+            background: $DarkGrey;
+        }
+
+        .ace_print-margin {
+            visibility: hidden !important;
+        }
+    }
+
+}

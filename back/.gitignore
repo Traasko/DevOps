@@ -1,0 +1,8 @@
+/node_modules
+.idea
+/postgres_volume
+/docker-certs-ca/
+/docker-certs-client/
+
+logs/*
+!logs/.placeholder
