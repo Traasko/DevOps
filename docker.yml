@@ -1,0 +1,21 @@
+version: '3'
+services:
+  image1:
+    build: ./image1
+    ports:
+      - 8001:8001
+    depends_on:
+      - image2
+      - image3
+
+  image2:
+    build: ./image2
+    ports:
+      - 8002:8002
+    depends_on:
+      - image3
+
+  image3:
+    build: ./image3
+    ports:
+      - 8003:8003
